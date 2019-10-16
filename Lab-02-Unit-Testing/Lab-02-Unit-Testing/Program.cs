@@ -4,6 +4,10 @@ namespace Lab_02_Unit_Testing
 {
     class Program
     {
+        /// <summary>
+        /// Creates the Menu for the bank app. Uses the user input to select the number in the user case. That choice drives the next method. 
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             int balance = 10689;
@@ -44,6 +48,12 @@ namespace Lab_02_Unit_Testing
             }
 
         }
+        /// <summary>
+        /// Uses the amount of the users input to subtract from the balance. Creates an new int that is compared back to the balance. If it is negative it gets sent an error.
+        /// </summary>
+        /// <param name="balance"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static int WithDraw(int balance, int input)
         {
             if (input < balance)
@@ -57,6 +67,12 @@ namespace Lab_02_Unit_Testing
             }
             return 0;
         }
+        /// <summary>
+        /// Takes the input of the user and adds to the balance. 
+        /// </summary>
+        /// <param name="balance"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static int Deposit(int balance, int input)
         {
             int newBalance = balance + input;
