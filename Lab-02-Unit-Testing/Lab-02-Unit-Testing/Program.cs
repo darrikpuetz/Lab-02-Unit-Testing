@@ -27,9 +27,17 @@ namespace Lab_02_Unit_Testing
                         Console.WriteLine("Let's get some monies! How much?");
                         int subBalance = Convert.ToInt32(Console.ReadLine());
 
-                        int newBalance = WithDraw(balance, subBalance);
+                        balance = WithDraw(balance, subBalance);
+                        break;
+                    case 3:
+                        Console.WriteLine($"Feed me the money! How much?");
+                        int depBalance = Convert.ToInt32(Console.ReadLine());
+                        balance = Deposit(balance, depBalance);
+                        break;
+                    default:
+                        Environment.Exit(0);
+                        break;
 
-                    
 
                 }
 
@@ -37,9 +45,15 @@ namespace Lab_02_Unit_Testing
 
         }
 
-        public static int WithDraw (int balance, int input)
+        public static int WithDraw(int balance, int input)
         {
             int newBalance = balance - input;
+            Console.WriteLine($"Your new balance is {newBalance}");
+            return newBalance;
+        }
+        public static int Deposit(int balance, int input)
+        {
+            int newBalance = balance + input;
             Console.WriteLine($"Your new balance is {newBalance}");
             return newBalance;
         }
