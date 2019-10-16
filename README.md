@@ -33,11 +33,11 @@ Then select and open ```Lab 02 Unit Testing.sln```
 ### Visuals
 
 #### Application Start
-![Image 1](https://via.placeholder.com/750x500)
+![Image 1](https://github.com/darrikpuetz/Lab-02-Unit-Testing/blob/lab2/Screenshots/Welcome%20Screen.PNG?raw=true)
 #### Using the Application
-![Image 1](https://via.placeholder.com/750x500)
+![Image 1](https://github.com/darrikpuetz/Lab-02-Unit-Testing/blob/lab2/Screenshots/Using.PNG)
 #### Application End
-![Image 1](https://via.placeholder.com/750x500)
+![Image 1](https://github.com/darrikpuetz/Lab-02-Unit-Testing/blob/lab2/Screenshots/Error.PNG)
 
 ---
 
