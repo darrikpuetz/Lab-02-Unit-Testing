@@ -10,6 +10,8 @@ namespace Lab_02_Unit_Testing
         /// <param name="args"></param>
         public static void Main(string[] args)
         {
+            try
+            {
             double balance = 10000;
             bool pickagain = true;
             while (pickagain)
@@ -46,6 +48,17 @@ namespace Lab_02_Unit_Testing
 
             }
 
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Program is finished.");
+            }
+
         }
         /// <summary>
         /// Uses the amount of the users input to subtract from the balance. Creates an new int that is compared back to the balance. If it is negative it gets sent an error.
@@ -72,8 +85,8 @@ namespace Lab_02_Unit_Testing
             }
             catch (Exception e )
             {
-                return balance;
                 Console.WriteLine(e.Message);
+                return balance;
             }
         }
         /// <summary>
@@ -93,7 +106,7 @@ namespace Lab_02_Unit_Testing
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return balance;
+                throw;
             }
         }
     }
