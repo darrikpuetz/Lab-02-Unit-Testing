@@ -2,15 +2,15 @@
 
 namespace Lab_02_Unit_Testing
 {
-    class Program
+     public class Program
     {
         /// <summary>
         /// Creates the Menu for the bank app. Uses the user input to select the number in the user case. That choice drives the next method. 
         /// </summary>
         /// <param name="args"></param>
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int balance = 10689;
+            double balance = 10000;
             bool pickagain = true;
             while (pickagain)
             {
@@ -29,16 +29,17 @@ namespace Lab_02_Unit_Testing
                         break;
                     case 2:
                         Console.WriteLine("Let's get some monies! How much?");
-                        int subBalance = Convert.ToInt32(Console.ReadLine());
+                        double subBalance = Convert.ToInt32(Console.ReadLine());
 
                         balance = WithDraw(balance, subBalance);
                         break;
                     case 3:
                         Console.WriteLine($"Feed me the money! How much?");
-                        int depBalance = Convert.ToInt32(Console.ReadLine());
+                        double depBalance = Convert.ToInt32(Console.ReadLine());
                         balance = Deposit(balance, depBalance);
                         break;
                     default:
+                        Console.ReadKey();
                         Environment.Exit(0);
                         break;
 
@@ -54,18 +55,19 @@ namespace Lab_02_Unit_Testing
         /// <param name="balance"></param>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static int WithDraw(int balance, int input)
+        public static double WithDraw(double balance, double input)
         {
-            if (input < balance)
+            if (input > balance)
             {
-            int newBalance = balance - input;
-            return newBalance;
+                Console.WriteLine($"Easy there pal. {input} is more than the {balance} you have.");
+                return balance;
             }
             else
             {
-                Console.WriteLine($"Easy there pal. {input} is more than the {balance} you have.");
+                double subBalance = balance - input;
+                Console.WriteLine($"Your new sub balance is {subBalance}");
+                return subBalance;
             }
-            return 0;
         }
         /// <summary>
         /// Takes the input of the user and adds to the balance. 
@@ -73,13 +75,12 @@ namespace Lab_02_Unit_Testing
         /// <param name="balance"></param>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static int Deposit(int balance, int input)
+        public static double Deposit(double balance, double input)
         {
-            int newBalance = balance + input;
+            double newBalance = balance + input;
             Console.WriteLine($"Your new balance is {newBalance}");
             return newBalance;
         }
     }
 
-}
 }
