@@ -44,12 +44,18 @@ namespace Lab_02_Unit_Testing
             }
 
         }
-
         public static int WithDraw(int balance, int input)
         {
+            if (input < balance)
+            {
             int newBalance = balance - input;
-            Console.WriteLine($"Your new balance is {newBalance}");
             return newBalance;
+            }
+            else
+            {
+                Console.WriteLine($"Easy there pal. {input} is more than the {balance} you have.");
+            }
+            return 0;
         }
         public static int Deposit(int balance, int input)
         {
@@ -57,6 +63,7 @@ namespace Lab_02_Unit_Testing
             Console.WriteLine($"Your new balance is {newBalance}");
             return newBalance;
         }
-
     }
+
+}
 }
