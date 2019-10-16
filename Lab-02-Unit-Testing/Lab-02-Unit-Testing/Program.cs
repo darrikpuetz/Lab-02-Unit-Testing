@@ -2,7 +2,7 @@
 
 namespace Lab_02_Unit_Testing
 {
-     public class Program
+    public class Program
     {
         /// <summary>
         /// Creates the Menu for the bank app. Uses the user input to select the number in the user case. That choice drives the next method. 
@@ -42,8 +42,6 @@ namespace Lab_02_Unit_Testing
                         Console.ReadKey();
                         Environment.Exit(0);
                         break;
-
-
                 }
 
             }
@@ -57,16 +55,25 @@ namespace Lab_02_Unit_Testing
         /// <returns></returns>
         public static double WithDraw(double balance, double input)
         {
-            if (input > balance)
+            try
             {
-                Console.WriteLine($"Easy there pal. {input} is more than the {balance} you have.");
-                return balance;
+                if (input > balance)
+                {
+                    Console.WriteLine($"Easy there pal. {input} is more than the {balance} you have.");
+                    return balance;
+                }
+                else
+                {
+                    double subBalance = balance - input;
+                    Console.WriteLine($"Your new sub balance is {subBalance}");
+                    return subBalance;
+                }
+
             }
-            else
+            catch (Exception e )
             {
-                double subBalance = balance - input;
-                Console.WriteLine($"Your new sub balance is {subBalance}");
-                return subBalance;
+                return balance;
+                Console.WriteLine(e.Message);
             }
         }
         /// <summary>
@@ -77,9 +84,17 @@ namespace Lab_02_Unit_Testing
         /// <returns></returns>
         public static double Deposit(double balance, double input)
         {
+            try
+            {
             double newBalance = balance + input;
             Console.WriteLine($"Your new balance is {newBalance}");
             return newBalance;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return balance;
+            }
         }
     }
 
